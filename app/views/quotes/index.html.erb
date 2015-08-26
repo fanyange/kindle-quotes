@@ -1,0 +1,21 @@
+<h1>Quotes of <%= @book.title %></h1>
+<p><%= link_to "← Back to books index page", books_path %></p>
+<div class="ui three doubling cards">
+<% @quotes.each do |q| %>
+  <div class="ui fluid card">
+    <div class="content">
+      <p><%= q.content %></p>
+    </div>
+    <div class="extra content ui grid">
+      <div class="ten wide column special">
+      <% if q.notes %>
+          <i class="write icon"></i><%= q.notes %>
+        <% end %>
+        </div>
+        <div class="six wide column special">
+          <span class="right floated time"><i class="calendar icon"></i><%= q.created_at.strftime("%Y-%0m-%0d") %></span>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
