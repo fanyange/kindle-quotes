@@ -18,7 +18,7 @@ notes_data = content.scan(pattern2)
 quotes_data.each do |quote_data|
   book_name, author, fst_char, lst_char, add_time, quotes = quote_data
 
-  book_name = book_name[/\p{Word}.+$/]
+  book_name = book_name[/\p{Word}.+$/].delete("\ufeff")
   add_time.sub! /星期./, ''
   add_time.sub! /下午/, "pm"
   add_time.sub! /上午/, "am"
@@ -32,11 +32,8 @@ end
 
 notes_data.each do |note_data|
   book_name, author, loc, add_time, notes = note_data
-  book_name = book_name[/\p{Word}.+$/]
+  book_name = book_name[/\p{Word}.+$/].delete("\ufeff")
 
-  quote = Quote.joins(:book).where('title = ? and start_loc = ? or end_loc = ?', book_name, loc, loc).first
-  if quote && quote.notes.nil?
-    quote.update_attribute(:notes, notes)
-    puts "create note: #{notes}"
-  end
+  quote = Quote.joins(:book).where('title = ? and start_loc = ? or end_loc = ?', book_name, loc, loc).take
+  puts "create note: #{notes}" if quote.update_attributes(notes: notes)
 end
