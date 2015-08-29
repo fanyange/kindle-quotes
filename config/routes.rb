@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'books#index'
-  resources :books, only: [:index, :show] do
+  resources :books, only: [:index, :show, :destroy] do
     resources :quotes, only: [:index, :show]
   end
 

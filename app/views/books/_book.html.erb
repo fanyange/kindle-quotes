@@ -2,5 +2,7 @@
   <td><%= link_to image_tag(book.image_url), book.douban_url%></td>
   <td><%= book.title %></td>
   <td><%= book.author %></td>
-  <td><%= link_to book.quotes.size, book_quotes_path(book) %></td>
+  <td>
+      <p><%= link_to button_tag("#{book.quotes.size} Quotes", class: 'ui inverted blue button'), book_quotes_path(book) %></p>
+  <p><%= link_to button_tag('Delete', class: 'ui inverted red button'), book, method: :delete, data: { confirm: "Are you sure?" }  %></td></p>
 <% end %>
