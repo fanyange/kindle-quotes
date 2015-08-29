@@ -1,2 +1,2 @@
 # Introduction
-This is a web app for collecting my reading quotes and notes.
+This is a web app for collecting my reading highlights and notes.
