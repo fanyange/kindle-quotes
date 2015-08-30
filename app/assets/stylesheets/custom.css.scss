@@ -18,10 +18,18 @@
   @include box_sizing;
 }
 
-main.container {
-  margin-top: 2em;
-}
-
 .special {
   padding: 0 !important;
+}
+
+div.header.item {
+  padding-left: 0 !important;
+}
+
+div.inverted {
+  border-radius: 0 !important;
+}
+
+main.ui.container {
+  margin-top: 35px;
 }

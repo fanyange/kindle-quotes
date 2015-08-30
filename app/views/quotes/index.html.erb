@@ -1,5 +1,4 @@
-<h1>Quotes of <%= @book.title %></h1>
-<p><%= link_to "← Back to books index page", books_path %></p>
+<h2><%= @book.title %></h2>
 <div class="ui three doubling cards">
 <% @quotes.each do |q| %>
   <div class="ui fluid card">
