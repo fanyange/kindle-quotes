@@ -1,16 +1,12 @@
-<div class="col-md-2"></div>
-<div class="col-md-8">
-  <h1>Books List</h1>
-  <table class="ui celled table">
-    <thead>
-      <tr>
-       <th>Thumbnail</th>
-       <th>Title</th>
-       <th>Author</th>
-       <th>Actions</th>
-     </tr>
-   </thead> 
+<%= content_tag :div, "", id: "frequency", data: {freq: frequency_data} %>
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Thumbnail</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+  </thead> 
   <%= render @books %>
 </table>
-</div>
-<div class="col-md-2"></div>

@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
+//= require morris
+//= require raphael
