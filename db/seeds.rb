@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 content = File.read('/Users/maorui/Downloads/My Clippings.txt')
-content.encode(content.encoding, universal_newline:true)
+content.encode!(content.encoding, universal_newline:true)
 puts "open File..."
 pattern = /(.*) \(([^()]+(?:\(.+\))?)\)\n- 您在位置 #(\d+)-(\d+)的标注 \| 添加于 (.+ .+)\n\n^(.+)$/
 pattern2 = /(.*) \(([^()]+(?:\(.+\))?)\)\n- 您在位置 #(\d+) 的笔记 \| 添加于 (.+ .+)\n\n^(.+)$/
