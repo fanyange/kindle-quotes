@@ -33,3 +33,12 @@ div.inverted {
 main.ui.container {
   margin-top: 35px;
 }
+
+img {
+  max-width: 100%;
+}
+
+img.thumb {
+  max-width: 70px;
+  height: auto;
+}

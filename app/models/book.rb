@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
 
   private
   def fetch_douban_info
-    unless self.image_url and self.douban_url
+    if self.image_url.blank? or self.douban_url.blank?
       title = self.title.split("(").first.strip
       book_info = JSON.load(open "https://api.douban.com/v2/book/search?q=#{CGI.escape title}&count=1")["books"].first
       self.image_url = book_info["images"]["small"] if book_info

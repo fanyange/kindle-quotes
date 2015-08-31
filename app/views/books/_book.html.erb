@@ -1,6 +1,6 @@
 <%= content_tag_for(:tr, book) do %>
-  <td><%= link_to image_tag(book.image_url), book.douban_url%></td>
-  <td><%= book.title %></td>
+  <td><%= link_to image_tag(book.image_url, class: 'thumb'), edit_book_path(book) %></td>
+  <td><%= link_to book.title , book.douban_url%></td>
   <td><%= book.author %></td>
   <td>
       <p><%= link_to button_tag("#{book.quotes.size} Quotes", class: 'ui inverted blue button'), book_quotes_path(book) %></p>
