@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     f = params[:book][:image]
     path = Rails.root.join('app', 'assets', 'images', f.original_filename)
     File.open(path, 'wb') { |file| file.write f.read }
-    File.delete(File.join(File.dirname(path), original_url))
+    File.delete(File.join(File.dirname(path), original_url)) rescue puts "Not a Uploaded image"
     if @book.update(image_url: f.original_filename)
       redirect_to root_path
     else
