@@ -3,6 +3,7 @@
   <td><%= link_to book.title , book.douban_url%></td>
   <td><%= book.author %></td>
   <td>
-      <p><%= link_to button_tag("#{book.quotes.size} Quotes", class: 'ui inverted blue button'), book_quotes_path(book) %></p>
-  <p><%= link_to button_tag('Delete', class: 'ui inverted red button'), book, method: :delete, data: { confirm: "Are you sure?" }  %></td></p>
+    <p><%= link_to button_tag("#{book.quotes.size} Quotes", class: 'ui inverted blue button'), book_quotes_path(book) %></p>
+    <p><%= link_to button_tag('Delete', class: 'ui inverted red button'), book, method: :delete, data: { confirm: "Are you sure?" }  %></p>
+  </td>
 <% end %>
