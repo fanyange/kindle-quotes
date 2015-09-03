@@ -1,5 +1,3 @@
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
 @import "semantic-ui";
 
 @mixin box_sizing {
@@ -10,12 +8,8 @@
 
 /* miscellaneous */
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
+#footer {
+  margin: 35px 0;
 }
 
 .special {
