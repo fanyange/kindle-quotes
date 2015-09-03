@@ -1,0 +1,20 @@
+<%= form_tag('/', class: "ui form", method: :get) do %>
+  <div class="field"><%= text_field_tag :q, nil, placeholder: 'Input Text ...' %></div>
+  <div class="inline fields">
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button_tag :user_sex, "male" %>
+        <%= label_tag :user_sex_male, "Male" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button_tag :user_sex, "female" %>
+        <%= label_tag :user_sex_female, "Female" %>
+      </div>
+    </div>
+  </div>
+  <div class="ui checkbox field"><%= check_box_tag :remembered  %>
+  <%= label_tag :remembered, "Remember Me" %></div>
+  <div class="field"><%= submit_tag "Search", class: "ui button blue" %></div>
+<% end %>
