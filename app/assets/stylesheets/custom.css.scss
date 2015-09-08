@@ -1,17 +1,25 @@
 @import "semantic-ui";
 
+$gray: #DCDDDE;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
 
-/* miscellaneous */
+div.item.header > h2.ui.header > a {
+  color: $gray;
+  &:hover {
+    color: lighten($gray, 30%);
+  }
+}
 
 #footer {
   margin: 35px 0;
 }
 
+/* miscellaneous */
 .special {
   padding: 0 !important;
 }
@@ -35,4 +43,8 @@ img {
 img.thumb {
   max-width: 70px;
   height: auto;
+}
+
+#notes {
+  background-color: #FFFFCC;
 }

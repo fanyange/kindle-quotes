@@ -1,0 +1,7 @@
+<%= form_for @book, html: { class:"ui form" } do |f| %>
+  <div class="two fields">
+    <div class="field">
+      <%= f.collection_select(:id, Book.all, :id, :title, {selected: nil, prompt: "Select A Book To Show Its Quotes"}, class: "ui search dropdown") %>
+    </div>
+  </div>
+<% end %>

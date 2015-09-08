@@ -1,20 +1,30 @@
 <h2><%= @book.title %></h2>
+
+<%= render "try_ui" %>
+
+<p></p>
+<p></p>
+<p></p>
 <div class="ui three doubling cards">
-<% @quotes.each do |q| %>
-  <div class="ui fluid card">
+  <% @quotes.each do |q| %>
+    <% if q.notes %>
+      <div id="notes" class="ui fluid card">
+    <% else %>
+      <div class="ui fluid card">
+    <% end %>
     <div class="content">
       <p><%= q.content %></p>
     </div>
     <div class="extra content ui grid">
       <div class="ten wide column special">
-      <% if q.notes %>
+        <% if q.notes %>
           <i class="write icon"></i><%= q.notes %>
         <% end %>
-        </div>
-        <div class="six wide column special">
-          <span class="right floated time"><i class="calendar icon"></i><%= q.created_at.strftime("%Y-%0m-%0d") %></span>
-        </div>
+      </div>
+      <div class="six wide column special">
+        <span class="right floated time"><i class="calendar icon"></i><%= q.created_at.strftime("%Y-%0m-%0d") %></span>
       </div>
     </div>
-<% end %>
+  </div>
+  <% end %>
 </div>

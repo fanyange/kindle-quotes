@@ -1,9 +1,10 @@
 <div class="ui inverted menu">
     <div class="ui container">
       <div class="header item">
-        <h2 class="ui inverted grey header">Kindle Quotes</h2>
+        <h2 class="ui inverted grey header"><%= link_to "Kindle Quotes", root_path %></h2>
       </div>
-        <%= link_to "Home", root_path, class: 'item'  %>
-        <a class="item" href="/books">Books</a>
+      <%= link_to "Quotes", '#', class: 'item' %>
+      <%= link_to "Blog", '#', class: 'item' %>
+      <%= link_to "About", '#', class: 'item' %>
     </div>
 </div>

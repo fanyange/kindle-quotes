@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'books#index'
-  resources :books do
+  get 'books', to: redirect('/')
+  get '毛睿', to: redirect('/books/2')
+  get 'test/:something', to: 'books#test', foo: 'bar'
+  get 'request', to: 'books#showrequest'
+  resources :books, constraints: { id: /\d+/ }, path_names: { edit: 'change' } do
     resources :quotes, only: [:index, :show]
   end
 
@@ -11,10 +15,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id', to: 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get 'products/:id/purchase', to: 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
