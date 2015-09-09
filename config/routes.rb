@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root 'books#index'
+
+  get 'quotes', to: 'static_pages#quotes'
+  get 'blog', to: 'static_pages#blog'
+  get 'about', to: 'static_pages#about'
+
   get 'books', to: redirect('/')
   get '毛睿', to: redirect('/books/2')
   get 'test/:something', to: 'books#test', foo: 'bar'
