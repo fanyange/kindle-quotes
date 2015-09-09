@@ -1,0 +1,8 @@
+= content_tag_for :tr, book do
+  td = link_to image_tag(book.image_url, class: 'thumb'), edit_book_path(book)
+  td =  link_to book.title , book.douban_url
+  td = book.author
+  td
+    p = link_to button_tag("#{book.quotes.size} Quotes", class: 'ui inverted blue button'), book_quotes_path(book) 
+    p = link_to button_tag('Show', class: 'ui inverted green button'), book 
+    p = link_to button_tag('Delete', class: 'ui inverted red button'), book, method: :delete, data: { confirm: "Are you sure?" }

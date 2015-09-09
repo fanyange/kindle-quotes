@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
 //= require morris
 //= require raphael
+
+Turbolinks.enableProgressBar();

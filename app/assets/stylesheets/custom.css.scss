@@ -1,5 +1,12 @@
 @import "semantic-ui";
 
+html.turbolinks-progress-bar {
+  color: #FF0099;
+  &:before {
+    background-color: #FF0099 !important;
+  }
+}
+
 $gray: #DCDDDE;
 
 @mixin box_sizing {
