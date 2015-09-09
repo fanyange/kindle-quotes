@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 /app/assets/images
+
+# Ignore vim temporary file
+*.swp
