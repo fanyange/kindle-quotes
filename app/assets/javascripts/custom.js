@@ -6,5 +6,8 @@ $('.message .close')
     .transition('fade')
     ;
 });
+
 $('select.dropdown').dropdown();
+
+$('.note').closest('.card').addClass('has-notes');
 });

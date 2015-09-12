@@ -1,0 +1,13 @@
+.ui.fluid.card
+  .content
+    p = quote.content
+  .extra.content.ui.grid
+    .ten.wide.column.special
+      - if quote.notes 
+        .note
+          i.write.icon
+          = quote.notes
+    .six.wide.column.special
+      span.right.floated.time
+      i.calendar.icon
+      = quote.created_at.strftime("%Y-%0m-%0d")

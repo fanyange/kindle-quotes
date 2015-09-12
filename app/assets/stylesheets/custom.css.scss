@@ -52,6 +52,12 @@ img.thumb {
   height: auto;
 }
 
-#notes {
-  background-color: #FFFFCC;
+.has-notes {
+  background-color: hsl(60,100%,90%) !important;
+}
+
+#board {
+  border: none;
+  box-shadow: none;
+  padding: 1em 0;
 }

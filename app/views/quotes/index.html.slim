@@ -1,0 +1,7 @@
+- if @book
+  .ui.segment#board
+    h2 = @book.title
+    = render 'select_book'
+
+.ui.three.doubling.cards
+  = render @quotes
