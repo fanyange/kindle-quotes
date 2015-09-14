@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150826080124) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
@@ -33,6 +36,6 @@ ActiveRecord::Schema.define(version: 20150826080124) do
     t.text     "notes"
   end
 
-  add_index "quotes", ["content"], name: "index_quotes_on_content", unique: true
+  add_index "quotes", ["content"], name: "index_quotes_on_content", unique: true, using: :btree
 
 end
