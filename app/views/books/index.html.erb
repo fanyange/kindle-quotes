@@ -1,6 +1,7 @@
 <%# <%= render "try_ui" %1> %>
 <%# <%= content_tag :div, "", id: "frequency", data: {freq: frequency_data} %1> %>
-<%= bar_chart Quote.group_by_month(:created_at, format: "%-m 月").count %>
+<%= render "chartkick" %>
+<h1 class="header">Index</h1>
 <table class="ui celled table">
   <thead>
     <tr>
