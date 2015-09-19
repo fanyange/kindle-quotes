@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   # before_action :authenticate
 
   def index
-    @books = Book.includes(:quotes).order('quotes.created_at desc')
+    @books = Book.includes(:quotes).order('quotes.created_at desc, books.created_at desc, books.updated_at desc')
     respond_to do |format|
       format.html
       format.xml { render xml: @books }
